@@ -1,0 +1,23 @@
+{
+    "name": "0plus1/patchr-laravel",
+    "description": "Laravel wrapper for Patchr",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Davide Gaido",
+            "email": "davide.0plus1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/console": ">=5.0",
+        "0plus1/patchr": "^1.0@RC"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zeroplusone\\Patchr\\Laravel\\": "src/"
+        }
+    }
+}
