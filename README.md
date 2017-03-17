@@ -1,6 +1,3 @@
-![overview-wide](https://cloud.githubusercontent.com/assets/420815/23929498/c9fccaca-097a-11e7-82c3-07df37ddc32a.jpg)
-
-
 # Patchr - Laravel
 ###### MySQL version control [Patchr on github](https://github.com/0plus1/patchr).
 
