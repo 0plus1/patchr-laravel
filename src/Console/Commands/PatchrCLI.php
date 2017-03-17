@@ -31,7 +31,10 @@ class PatchrCLI extends Command {
      */
     public function handle()
     {
+        $output = '';
         $patchr = new Patchr( config('patchr') );
+
+        $this->info( '[patchr::'. $this->argument('do').'] started' );
 
         switch( $this->argument('do') )
         {
@@ -64,6 +67,11 @@ class PatchrCLI extends Command {
                 $this->error('Command not found: ['.$this->argument('do').']');
                 break;
         }
-    }
 
+        if($output['success'] === TRUE) {
+            $this->info( $output['output'] );
+        } else {
+            $this->error( $output['error'] );
+        }
+    }
 }
