@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.5.9",
         "illuminate/console": ">=5.0",
-        "0plus1/patchr": "^1.0@RC"
+        "0plus1/patchr": "dev-master"
     },
     "autoload": {
         "psr-4": {
