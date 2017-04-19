@@ -5,10 +5,10 @@ use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Zeroplusone\Patchr\Laravel\Console\Commands\PatchrCLI;
 
 /**
- * Class ServiceProvider
- * @package Zeroplusone\Patchr\Laravel
+ * Class LumenServiceProvider
+ * @package Zeroplusone\Patchr\Lumen
  */
-class ServiceProvider extends IlluminateServiceProvider {
+class LumenServiceProvider extends IlluminateServiceProvider {
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -35,7 +35,7 @@ class ServiceProvider extends IlluminateServiceProvider {
     public function boot()
     {
         $configPath = __DIR__ . '/../config/patchr.php';
-        $this->publishes([$configPath => config_path('patchr.php')], 'config');
+        $this->publishes([$configPath => $this->config_path('patchr.php')], 'config');
         $this->cli();
     }
 
@@ -49,5 +49,16 @@ class ServiceProvider extends IlluminateServiceProvider {
                 PatchrCLI::class,
             ]);
         }
+    }
+
+    /**
+     * Lumen friendly config_path function
+     *
+     * @param string $path
+     * @return string
+     */
+    private function config_path($path = '')
+    {
+        return app()->basePath() . '/config' . ($path ? '/' . $path : $path);
     }
 }
